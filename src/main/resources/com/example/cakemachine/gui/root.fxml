@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.cakemachine.gui.GUIController">
+    <BorderPane layoutX="169.0" layoutY="129.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <left>
+            <VBox prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                <Separator prefWidth="200.0" />
+                <Label text="Hersteller" />
+                <TableView fx:id="herstellerTableView" prefHeight="436.0" prefWidth="100.0">
+                    <columns>
+                        <TableColumn fx:id="herstellerNameTableColumn" prefWidth="75.0" text="Name" />
+                        <TableColumn fx:id="herstellerKuchenanzahlTableColumn" prefWidth="75.0" text="Kuchenanzahl" />
+                    </columns>
+                </TableView>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <Button mnemonicParsing="false" onAction="#insertHersteller" text="Add" />
+                    <Button mnemonicParsing="false" onAction="#deleteHersteller" text="Remove" />
+                </HBox>
+            </VBox>
+        </left>
+        <right>
+            <VBox prefHeight="375.0" prefWidth="133.0" BorderPane.alignment="CENTER">
+                <Separator prefWidth="200.0" />
+                <Label fx:id="allergenLabel" />
+                <TableView fx:id="allergenTableView" prefHeight="361.0" prefWidth="100.0">
+                    <columns>
+                        <TableColumn fx:id="allergenTypTableColumn" prefWidth="75.0" text="Typ" />
+                    </columns>
+                </TableView>
+                <HBox prefHeight="21.0" prefWidth="100.0">
+                    <Button mnemonicParsing="false" onAction="#switchAllergen" text="Switch" />
+                </HBox>
+            </VBox>
+        </right>
+        <center>
+            <VBox prefHeight="330.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+                <Separator prefWidth="200.0" />
+                <Label text="Kuchen" />
+                <TableView fx:id="kuchenTableView" prefHeight="333.0" prefWidth="356.0">
+                    <columns>
+                        <TableColumn fx:id="kuchenFachnummerTableColumn" prefWidth="50.0" text="Fachnr." />
+                        <TableColumn fx:id="kuchenHerstellerTableColumn" prefWidth="80.0" text="Hersteller" />
+                        <TableColumn fx:id="kuchenInspektionsdatumTableColumn" prefWidth="150" text="Inspektionsdatum" />
+                        <TableColumn fx:id="kuchenHaltbarkeitTableColumn" prefWidth="85.0" text="Haltbarkeit" />
+                    </columns>
+                </TableView>
+                <HBox prefHeight="14.0" prefWidth="400.0">
+                    <Button mnemonicParsing="false" onAction="#insertKuchen" text="Insert" />
+                    <Button mnemonicParsing="false" onAction="#updateKuchen" text="Update" />
+                    <Button mnemonicParsing="false" onAction="#deleteKuchen" text="Delete" />
+                </HBox>
+            </VBox>
+        </center>
+        <top>
+            <MenuBar BorderPane.alignment="CENTER">
+                <Menu mnemonicParsing="false" text="File">
+                    <Menu mnemonicParsing="false" text="save">
+                        <MenuItem mnemonicParsing="false" onAction="#saveWithJOS" text="with JOS" />
+                        <MenuItem mnemonicParsing="false" onAction="#saveWithJBP" text="with JBP" />
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="load">
+                        <MenuItem mnemonicParsing="false" onAction="#loadWithJOS" text="with JOS" />
+                        <MenuItem mnemonicParsing="false" onAction="#loadWithJBP" text="with JBP" />
+                    </Menu>
+                </Menu>
+            </MenuBar>
+        </top>
+    </BorderPane>
+</AnchorPane>
