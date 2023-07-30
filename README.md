@@ -1,5 +1,4 @@
 # CakeMachine
-# CakeMachine
 The project mainly includes the following features:
 1. Business logic based on the decoration pattern.
 
